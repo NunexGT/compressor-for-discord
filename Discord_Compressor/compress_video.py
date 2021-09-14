@@ -23,12 +23,7 @@ ICON_INFO = 0x40
 ICON_STOP = 0x10
 
 
-input("Press ENTER to begin...")
-
-video_extensions = ['.mp4','.avi']
-image_extensions = ['.jpg','.jpeg','.png']
-audio_extensions = ['.mp3','.wav']
-gif_extensions = ['.gif']
+print("Press ENTER to begin...")
 
 #config.txt
 script_path = os.path.dirname(os.path.realpath(__file__))
