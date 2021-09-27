@@ -511,9 +511,9 @@ def execute_video():
 
 #start compression
 
-video_file_extensions = ['.mp4','.avi','.mkv']
-audio_file_extensions = ['.mp3','.wav']
-photo_file_extension = ['.jpg','.jpeg','.png']
+video_file_extensions = ['.mp4','.avi','.mkv','.mov','.wmv','.avi','.mpeg','.mpg','.m2v','.mp2','.mpe','.mpv','.webm','.flv','.vob','.ogg','drc','qt','.amv','.m4v','.3gp']
+audio_file_extensions = ['.mp3','.wav','.aac','.ogg','.flac','.alac','.aiff','.opus','.wma']
+photo_file_extension = ['.jpg','.jpeg','.png','.tiff','.bmpS']
 
 if extension in video_file_extensions:
     execute_video()
