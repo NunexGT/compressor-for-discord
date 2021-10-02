@@ -17,6 +17,8 @@
 <h1>How to use:</h1>
      
    Simply right click on the media file you want (maybe it will not happear in all of them because it doesn´t have support yet, open an issue if that´s the case)
-     ![image](https://user-images.githubusercontent.com/74361788/135717584-e9b3490f-fe26-4ffb-9ca5-e044c0cc0b3b.png)
-     And then click in <b>Compress for Discord</b>
+   
+   ![image](https://user-images.githubusercontent.com/74361788/135717584-e9b3490f-fe26-4ffb-9ca5-e044c0cc0b3b.png)
+     
+   And then click in <b>Compress for Discord</b>
  
