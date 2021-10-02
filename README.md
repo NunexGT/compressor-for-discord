@@ -12,6 +12,7 @@
    <ol>Install <a href="https://phoenixnap.com/kb/install-pip-windows">pip</a>
     <ol>Install <a href="https://github.com/GyanD/codexffmpeg/releases/download/2021-09-30-git-3ee4502753/ffmpeg-2021-09-30-git-3ee4502753-full_build.zip">ffmpeg</a> and follow this guide: https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10
      <ol>Done!</ol>
+     </li>
      
      <h1>How to use:</h1>
      
