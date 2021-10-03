@@ -23,7 +23,7 @@
    And then click in <b>Compress for Discord</b>
    
 <h1>Use the Discord Nitro Preset (100MB):</h1>
-  Go to the install location: <code>C:\Program Files\Compressor for Discord</code>
-  Open the <code>config.txt</code> file
+  Go to the install location: <code>C:\Program Files\Compressor for Discord</code><br>
+  Open the <code>config.txt</code> file<br>
   Edit <code>nitro_preset = false</code> to <code>nitro_preset = true</code>
  
