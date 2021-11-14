@@ -505,9 +505,9 @@ def execute_gif():
 
 def execute_video():
     if (discord_nitro_preset == 'nitro_preset = false'): 
-        compress_video(sys.argv[1], 8 * 1000)
+        compress_video(sys.argv[1], 8000)
     if (discord_nitro_preset == 'nitro_preset = true'):
-        compress_video(sys.argv[1], 100 * 1000)
+        compress_video(sys.argv[1], 100000)
 
 #start compression
 
