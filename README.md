@@ -12,11 +12,11 @@
 <li>Install <a href="https://github.com/GyanD/codexffmpeg/releases/download/2021-09-30-git-3ee4502753/ffmpeg-2021-09-30-git-3ee4502753-full_build.zip">ffmpeg</a> and follow this guide: https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10</li>
   <li>Go to the command prompt or hit the Win+R keys and type <code>cmd</code> and press Ok</li>
  <li>Copy and paste the following commands:<br>
-  <code>pip install moviepy<br>
-   pip install numpy<br>
-   pip install ffmpeg-python<br>
-   pip install ffmpeg<br>
-   pip install pillow</code>
+  <code>pip install moviepy</code><br>
+  <code>pip install numpy</code><br>
+  <code>pip install ffmpeg-python</code><br>
+  <code>pip install ffmpeg</code><br>
+   <code>pip install pillow</code>
      <li>Done!</li>
      </ol>
      
