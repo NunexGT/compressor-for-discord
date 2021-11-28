@@ -1,5 +1,5 @@
 # compressor-for-discord
-<h2><b>Beta Version</b></h2>
+<h2><b>First Beta Version</b></h2>
  A Simple to use all in one media compressor for Discord
  Only to be used for initial beta testing, yet too rough version
  
