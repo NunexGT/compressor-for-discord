@@ -85,24 +85,7 @@ def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_su
         # Audio bitrate, in bps.
         audio_bitrate = float(next((s for s in probe['streams'] if s['codec_type'] == 'audio'), None)["bit_rate"])
         # Target total bitrate, in bps.
-        target_total_bitrate = (size_upper_bound * 1024 * 8) / (1.073741824 * duration)
-        if target_total_bitrate < total_bitrate_lower_bound and size_upper_bound == 8000:
-            print('Bitrate is extremely low!')
-            winmessagebox=mbox('''This Video is really large to fit in 8MB
-Do you want to try the 100MB Discord Nitro Limit?''')
-            #yes button is equal to 6
-            if  winmessagebox == 6:
-                compress_video(sys.argv[1], 100 * 1000)
-            return False
-
-        if target_total_bitrate < total_bitrate_lower_bound and size_upper_bound == 100000:
-            print('Bitrate is extremely low!')
-            winmessagebox=mbox('''This video will not fit into Discord without making the video unwatchable
-Do You Want to use nomral optimization to make it smaller?''')
-            #yes button is equal to 6
-            if  winmessagebox == 6:
-                optimized_video()
-            return False
+        
 
         # Best min size, in kB.
         best_min_size = (min_audio_bitrate + min_video_bitrate) * (1.073741824 * duration) / (8 * 1024)
@@ -123,8 +106,24 @@ Do You Want to use nomral optimization to make it smaller?''')
 
         # Target video bitrate, in bps.
         video_bitrate = target_total_bitrate - audio_bitrate
-        if video_bitrate < 1000:
+        if video_bitrate < 1000000 and size_upper_bound = 8000:
             print('Bitrate {} is extremely low! Stop compress.'.format(video_bitrate))
+            target_total_bitrate = (size_upper_bound * 1024 * 8) / (1.073741824 * duration)
+            print('Bitrate is extremely low!')
+            winmessagebox=mbox('''This Video is really large to fit in 8MB
+#Do you want to try the 100MB Discord Nitro Limit?''')
+            #yes button is equal to 6
+            if  winmessagebox == 6:
+                compress_video(sys.argv[1], 100 * 1000)
+            return False
+
+        if video_bitrate < 1000000 and size_upper_bound = 100000:
+            print('Bitrate is extremely low!')
+            winmessagebox=mbox('''This video will not fit into Discord without making the video unwatchable
+Do You Want to use nomral optimization to make it smaller?''')
+            #yes button is equal to 6
+            if  winmessagebox == 6:
+                optimized_video()
             return False
 
         i = ffmpeg.input(video_full_path)
