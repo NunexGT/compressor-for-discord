@@ -1,4 +1,5 @@
 # compressor-for-discord
+<h2><b>First Beta Version</b></h2>
  A Simple to use all in one media compressor for Discord
  Only to be used for initial beta testing, yet too rough version
  
@@ -8,9 +9,15 @@
  <li>Download the <a href="https://github.com/SuperX-dev/compressor-for-discord.git">Code</a></li>
  <li>Extract it and copy the "Discord Compressor" folder to <code>C:\Program Files\</code></li>
  <li>Run the <code>register.reg</code></li>
-   <li>Install <a href="https://www.python.org/downloads/">Python 3</a> </li>
- <li>Install <a href="https://phoenixnap.com/kb/install-pip-windows">pip</a></li>
-    <li>Install <a href="https://github.com/GyanD/codexffmpeg/releases/download/2021-09-30-git-3ee4502753/ffmpeg-2021-09-30-git-3ee4502753-full_build.zip">ffmpeg</a> and follow this guide: https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10</li>
+   <li>Install <a href="https://www.python.org/downloads/">Python 3</a> and mark the <code>Add Python to Path</code> on the first page of python setup, and allow to disable path lenght limit after installation </li>
+<li>Download <a href="https://github.com/GyanD/codexffmpeg/releases/download/2021-09-30-git-3ee4502753/ffmpeg-2021-09-30-git-3ee4502753-full_build.zip">ffmpeg</a> and follow this guide: https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10</li>
+  <li>Go to the command prompt or hit the Win+R keys and type <code>cmd</code> and press Ok</li>
+ <li>Copy and paste the following commands, one by one:<br>
+  <code>pip install moviepy</code><br>
+  <code>pip install numpy</code><br>
+  <code>pip install ffmpeg-python</code><br>
+  <code>pip install ffmpeg</code><br>
+   <code>pip install pillow</code>
      <li>Done!</li>
      </ol>
      
