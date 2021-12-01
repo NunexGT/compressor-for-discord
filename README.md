@@ -18,6 +18,7 @@
   <code>pip install ffmpeg-python</code><br>
   <code>pip install ffmpeg</code><br>
    <code>pip install pillow</code>
+  <code>pip install winsound</code>
      <li>Done!</li>
      </ol>
      
@@ -29,8 +30,9 @@
      
    And then click in <b>Compress for Discord</b>
    
-<h1>Use the Discord Nitro Preset (100MB):</h1>
+<h1>Use the Discord Nitro Preset (100MB) and disable sound notification:</h1>
   Go to the install location: <code>C:\Program Files\Compressor for Discord</code><br>
   Open the <code>config.txt</code> file<br>
-  Edit <code>nitro_preset = false</code> to <code>nitro_preset = true</code>
+  Edit <code>nitro_preset = false</code> to <code>nitro_preset = true</code> if you want to activate Discord Nitro Mode
+  Edit <code>sound = true</code> to <code>sound = false</code> to disable notification sound
  
