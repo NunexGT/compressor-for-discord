@@ -30,6 +30,8 @@
      
    And then click in <b>Compress for Discord</b>
    
+   <b>Note</b>:If video gets higher then 8MB. It will prompt you with some dialogues. Like for you to use Discord Nitro Mode or Divide the videos in parts.
+   
 <h1>Use the Discord Nitro Preset (100MB) and disable sound notification:</h1>
   Go to the install location: <code>C:\Program Files\Compressor for Discord</code><br>
   Open the <code>config.txt</code> file<br>
