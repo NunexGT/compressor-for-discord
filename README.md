@@ -36,5 +36,5 @@
   Go to the install location: <code>C:\Program Files\Compressor for Discord</code><br>
   Open the <code>config.txt</code> file<br>
   Edit <code>nitro_preset = false</code> to <code>nitro_preset = true</code> if you want to activate Discord Nitro Mode
-  Edit <code>sound = true</code> to <code>sound = false</code> to disable notification sound
+  <br>Edit <code>sound = true</code> to <code>sound = false</code> to disable notification sound
  
