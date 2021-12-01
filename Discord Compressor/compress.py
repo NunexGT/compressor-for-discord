@@ -11,6 +11,9 @@ import ctypes
 import tempfile
 from shutil import copyfile
 import time
+import winsound
+import math
+import shlex
 
 #CTYPES_MessageBox_icons
 MB_OK = 0x0
@@ -31,15 +34,26 @@ read_config = open(script_path + '\\config.txt','r')
 config = read_config.read()
 read_config.close()
 content_config = config.splitlines()
+slected = False
+
 
 for bwords in content_config[::3]:
     config_value = bwords
+
+for bwords in content_config[1::3]:
+    sound_value = bwords
+
 
 #Use discord nitro preset
 #config value is a string (nitro_preset = false or true)
 discord_nitro_preset = config_value
 
 
+def finished_sound():
+    if sound_value == "sound = true":
+        winsound.PlaySound('C:/Program Files/Discord Compressor/resources/audio/finished_sound.wav', winsound.SND_FILENAME)
+        print("Finished")       
+    
 
 
 i = input()
@@ -50,13 +64,81 @@ sys.argv  #sys.argv[1] is the file to upload
 file_path = sys.argv[1]
 print(file_path)
 filename, extension = os.path.splitext(sys.argv[1])
-print(extension)
+print('Media Extension:' + extension)
 
 #windowsmessagebox
 MessageBox = ctypes.windll.user32.MessageBoxW
 
+if (discord_nitro_preset == 'nitro_preset = false'): 
+    video_compression_target=8000
+else:
+    video_compression_target=100000
+
+
 def mbox(message):
     return ctypes.windll.user32.MessageBoxW(0,message, 'Compress for Discord', MB_YESNO | ICON_EXLAIM)
+
+def divide_video(video_bitrate, worst_bitrate_video, duration):
+    bitrate_difference_ratio = worst_bitrate_video / video_bitrate
+    video_parts_amount = round(bitrate_difference_ratio ** 0.5) + 1
+    print("The video will be devided in:" + str(video_parts_amount) + "parts")
+    duration_rounding=round(duration)
+    duration_rounded=duration_rounding + 1 
+    videos_time_seconds = duration / video_parts_amount
+    split_by_seconds(file_path,videos_time_seconds)
+    return video_parts_amount
+    
+
+
+def get_video_length(filename):
+    output = subprocess.check_output(("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of",
+                                      "default=noprint_wrappers=1:nokey=1", filename)).strip()
+    video_length = int(float(output))
+    print("Video length in seconds: " + str(video_length))
+
+    return video_length
+
+
+def ceildiv(a, b):
+    return int(math.ceil(a / float(b)))
+
+
+def split_by_seconds(filename, split_length, vcodec="libx264", acodec="aac",
+                     extra="-b:v 256k", video_length=None, **kwargs):
+    if split_length and split_length <= 0:
+        print("Split length can't be 0")
+        raise SystemExit
+
+    if not video_length:
+        video_length = get_video_length(filename)
+    split_count = ceildiv(video_length, split_length)
+    if split_count == 1:
+        print("Video length is less then the target split length.")
+        raise SystemExit
+
+    split_cmd = ["ffmpeg", "-i", filename, "-vcodec", vcodec, "-acodec", acodec] + shlex.split(extra)
+    try:
+        filebase = ".".join(filename.split(".")[:-1])
+        fileext = filename.split(".")[-1]
+    except IndexError as e:
+        raise IndexError("No . in filename. Error: " + str(e))
+    for n in range(0, split_count):
+        split_args = []
+        if n == 0:
+            split_start = 0
+        else:
+            split_start = split_length * n
+
+        split_args += ["-ss", str(split_start), "-t", str(split_length),
+                       filebase + "-" + str(n + 1) + "-of-" +
+                       str(split_count) + "." + fileext]
+        print("About to run: " + " ".join(split_cmd + split_args))
+        subprocess.check_output(split_cmd + split_args)
+
+
+def compress_video_parts(video_parts_amount):
+    for i in range(video_parts_amount):
+        compress_video(filename + "-" + i +"-of-2"+extension,video_compression_target)
 
 
 def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_suffix='-compressed'):
@@ -72,10 +154,15 @@ def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_su
     
     output_file_name = filename + filename_suffix + extension
 
+    video_dir=os.path.dirname(file_path)
+
     total_bitrate_lower_bound = 110000
     min_audio_bitrate = 92000
     max_audio_bitrate = 256000
     min_video_bitrate = 3000000
+    #in bps
+    worst_bitrate_video = 256000
+
 
     try:
         # Bitrate reference: https://en.wikipedia.org/wiki/Bit_rate#Encoding_bit_rate
@@ -85,12 +172,14 @@ def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_su
         # Audio bitrate, in bps.
         audio_bitrate = float(next((s for s in probe['streams'] if s['codec_type'] == 'audio'), None)["bit_rate"])
         # Target total bitrate, in bps.
+        target_total_bitrate = (size_upper_bound * 1024 * 8) / (1.073741824 * duration)
         
 
         # Best min size, in kB.
         best_min_size = (min_audio_bitrate + min_video_bitrate) * (1.073741824 * duration) / (8 * 1024)
         if size_upper_bound < best_min_size:
-            print('Quality not good! Recommended minimum size:', '{:,}'.format(int(best_min_size)), 'KB.')
+            print('Quality not optimal. Video will not have the best quality!')
+           
             # return False
 
         # Target audio bitrate, in bps.
@@ -106,20 +195,31 @@ def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_su
 
         # Target video bitrate, in bps.
         video_bitrate = target_total_bitrate - audio_bitrate
-        if video_bitrate < 1000000 and size_upper_bound == 8000:
-            print('Bitrate {} is extremely low! Stop compress.'.format(video_bitrate))
+        bitrate_difference_ratio = worst_bitrate_video / video_bitrate
+        video_parts_amount = round(bitrate_difference_ratio ** 0.5) + 1
+        if video_bitrate < worst_bitrate_video and size_upper_bound == 8000:
+            print('Bitrate {} bps is extremely low! Stop compress.'.format(video_bitrate))
             target_total_bitrate = (size_upper_bound * 1024 * 8) / (1.073741824 * duration)
-            print('Bitrate is extremely low!')
-            winmessagebox=mbox('''This Video is really large to fit in 8MB
-#Do you want to try the 100MB Discord Nitro Limit?''')
+            winmessagebox=mbox('''Do You want to split this video into various parts?''')
+            print(winmessagebox)
+            time.sleep(2)
+            if winmessagebox == 6:
+                divide_video(video_bitrate,worst_bitrate_video,duration)
+            if winmessagebox == 7:
+                winmessagebox=mbox('''This Video is really large to fit in 8MB
+Do you want to try the 100MB Discord Nitro Limit?''')
             #yes button is equal to 6
-            if  winmessagebox == 6:
-                compress_video(sys.argv[1], 100 * 1000)
+                if  winmessagebox == 6:
+                    compress_video(sys.argv[1], 100 * 1000)
             return False
 
-        if video_bitrate < 1000000 and size_upper_bound == 100000:
-            print('Bitrate is extremely low!')
-            winmessagebox=mbox('''This video will not fit into Discord without making the video unwatchable
+        if video_bitrate < worst_bitrate_video and size_upper_bound == 100000:
+            print('Bitrate {} bps is extremely low! Stop compress.'.format(video_bitrate))
+            winmessagebox=mbox('''Do You want to split this video into various parts?''')
+            if winmessagebox == 6:
+                divide_video(video_bitrate,worst_bitrate_video,duration)
+            if winmessagebox == 7:
+                winmessagebox=mbox('''This video will not fit into Discord without making the video unwatchable
 Do You Want to use nomral optimization to make it smaller?''')
             #yes button is equal to 6
             if  winmessagebox == 6:
@@ -140,9 +240,11 @@ Do You Want to use nomral optimization to make it smaller?''')
                           ).overwrite_output().run()
 
         if os.path.getsize(output_file_name) <= size_upper_bound * 1024:
+            os.remove(video_dir+"ffmpeg2pass-0.log")
+            os.remove(video_dir+"ffmpeg2pass-0.log.mbtree")
             return output_file_name
         elif os.path.getsize(output_file_name) < os.path.getsize(video_full_path):  # Do it again
-            return save_compressed_video(output_file_name, size_upper_bound)
+            return compress_video(output_file_name, size_upper_bound)
         else:
             return False
     except FileNotFoundError as e:
@@ -503,10 +605,9 @@ def execute_gif():
 
 
 def execute_video():
-    if (discord_nitro_preset == 'nitro_preset = false'): 
-        compress_video(sys.argv[1], 8000)
-    if (discord_nitro_preset == 'nitro_preset = true'):
-        compress_video(sys.argv[1], 100000)
+    compress_video(sys.argv[1], video_compression_target)
+
+
 
 #start compression
 
@@ -514,15 +615,21 @@ video_file_extensions = ['.mp4','.avi','.mkv','.mov','.wmv','.avi','.mpeg','.mpg
 audio_file_extensions = ['.mp3','.wav','.aac','.ogg','.flac','.alac','.aiff','.opus','.wma']
 photo_file_extension = ['.jpg','.jpeg','.png','.tiff','.bmp']
 
+
 if extension in video_file_extensions:
     execute_video()
+    finished_sound()
     
 if extension in audio_file_extensions:
     get_audio_length(file_path)
     execute_audio()
-    
+    finished_sound()
+
 if extension in photo_file_extension:
     execute_photo()
-    
+    finished_sound()
+
 if (extension == '.gif'):
     execute_gif()
+    finished_sound()
+

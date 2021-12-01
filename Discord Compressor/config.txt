@@ -1,1 +1,2 @@
 nitro_preset = false
+sound = true
