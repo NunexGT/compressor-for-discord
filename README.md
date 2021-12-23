@@ -6,7 +6,7 @@
  <h1>How to install:</h1>
  
  <ol>
- <li>Download the <a href="https://github.com/SuperX-dev/compressor-for-discord.git">Code</a></li>
+ <li>Download the <a href="https://github.com/SuperX-dev/compressor-for-discord/archive/refs/heads/beta_0.1.zip">Code</a></li>
  <li>Extract it and copy the "Discord Compressor" folder to <code>C:\Program Files\</code></li>
  <li>Run the <code>register.reg</code></li>
    <li>Install <a href="https://www.python.org/downloads/">Python 3</a> and mark the <code>Add Python to Path</code> on the first page of python setup, and allow to disable path lenght limit after installation </li>
@@ -17,7 +17,7 @@
   <code>pip install numpy</code><br>
   <code>pip install ffmpeg-python</code><br>
   <code>pip install ffmpeg</code><br>
-   <code>pip install pillow</code>
+   <code>pip install pillow</code><br>
   <code>pip install winsound</code>
      <li>Done!</li>
      </ol>
