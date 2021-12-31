@@ -6,7 +6,7 @@
  <h1>How to install:</h1>
  
  <ol>
- <li>Download the <a href="https://github.com/SuperX-dev/compressor-for-discord.git">Code</a></li>
+ <li>Download the <a href="https://github.com/SuperX-dev/compressor-for-discord/archive/refs/heads/beta_0.1.zip">Code</a></li>
  <li>Extract it and copy the "Discord Compressor" folder to <code>C:\Program Files\</code></li>
  <li>Run the <code>register.reg</code></li>
    <li>Install <a href="https://www.python.org/downloads/">Python 3</a> and mark the <code>Add Python to Path</code> on the first page of python setup, and allow to disable path lenght limit after installation </li>
@@ -17,7 +17,8 @@
   <code>pip install numpy</code><br>
   <code>pip install ffmpeg-python</code><br>
   <code>pip install ffmpeg</code><br>
-   <code>pip install pillow</code>
+   <code>pip install pillow</code><br>
+  <code>pip install winsound</code>
      <li>Done!</li>
      </ol>
      
@@ -29,8 +30,11 @@
      
    And then click in <b>Compress for Discord</b>
    
-<h1>Use the Discord Nitro Preset (100MB):</h1>
+   <b>Note</b>:If video gets higher then 8MB. It will prompt you with some dialogues. Like for you to use Discord Nitro Mode or Divide the videos in parts.
+   
+<h1>Use the Discord Nitro Preset (100MB) and disable sound notification:</h1>
   Go to the install location: <code>C:\Program Files\Compressor for Discord</code><br>
   Open the <code>config.txt</code> file<br>
-  Edit <code>nitro_preset = false</code> to <code>nitro_preset = true</code>
+  Edit <code>nitro_preset = false</code> to <code>nitro_preset = true</code> if you want to activate Discord Nitro Mode
+  <br>Edit <code>sound = true</code> to <code>sound = false</code> to disable notification sound
  
