@@ -1,0 +1,3 @@
+@echo off
+cls
+"C:\Program Files\Discord Compressor" %1
