@@ -1,1 +1,0 @@
-copy Discord_Compressor folder to %USERPROFILE%/AppData/Local
