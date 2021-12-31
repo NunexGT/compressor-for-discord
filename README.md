@@ -4,7 +4,9 @@
  Only to be used for initial beta testing, yet too rough version
  
  <h1>How to install:</h1>
- 
+ <h2>Using Windows Binary (Updates may take more time)</h3>
+ You can use the <a href="https://github.com/SuperX-dev/compressor-for-discord/releases/download/V0.1.2/compressor4discord-win64.exe">Compressor4Discord installer</a> to just use it right away!
+ <h2>Manual method</h2>
  <ol>
  <li>Download the <a href="https://github.com/SuperX-dev/compressor-for-discord/archive/refs/heads/beta_0.1.zip">Code</a></li>
  <li>Extract it and copy the "Discord Compressor" folder to <code>C:\Program Files\</code></li>
