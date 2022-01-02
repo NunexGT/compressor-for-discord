@@ -67,7 +67,7 @@
  [],
  False,
  False,
- 1640956329,
+ 1641152505,
  [('run.exe',
    'C:\\Users\\Nuno '
    'Miguel\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python39\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',

@@ -3,7 +3,7 @@
 ProjectFileVersion = 1.1
 [General]
 Program name = Compressor 4 Discord
-Program version = V0.1.2
+Program version = V0.1.3
 Windows 2000 = 0
 Windows XP = 1
 Windows Server 2003 = 1
@@ -74,6 +74,81 @@ RunProgs = 0
 Execdlls = 0
 [Languages]
 [Files/Dirs]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\base_library.zip
+764.9 KB
+zip
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\compress.exe
+3.7 MB
+exe
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\compress.py
+23.7 KB
+py
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\compress_discordscript.cmd
+49 Byte
+cmd
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\config.txt
+34 Byte
+txt
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libcrypto-1_1.dll
+3.3 MB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libffi-7.dll
+32 KB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
+32.9 MB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libssl-1_1.dll
+678.7 KB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\MSVCP140.dll
+613.3 KB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\pyexpat.pyd
+198.7 KB
+pyd
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\python39.dll
+4.3 MB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\readme.txt
+42 Byte
+txt
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\register.reg
+8.4 KB
+reg
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\select.pyd
+28.2 KB
+pyd
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\unicodedata.pyd
+1.1 MB
+pyd
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\VCRUNTIME140.dll
+94.9 KB
+dll
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\winsound.pyd
+29.2 KB
+pyd
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\altgraph-0.17.2.dist-info
+N/A
+[Folder]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\ffmpeg
+N/A
+[Folder]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\numpy
+N/A
+[Folder]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\PIL
+N/A
+[Folder]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\pyinstaller-4.7.dist-info
+N/A
+[Folder]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\resources
+N/A
+[Folder]
+C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\setuptools-58.1.0.dist-info
+N/A
+[Folder]
 C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\_asyncio.pyd
 63.7 KB
 pyd
@@ -109,57 +184,6 @@ C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist
 pyd
 C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\_uuid.pyd
 23.2 KB
-pyd
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\base_library.zip
-764.9 KB
-zip
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\compress.exe
-3.7 MB
-exe
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\compress_discordscript.cmd
-67 Byte
-cmd
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\compress_discordscript.cmd.bak
-54 Byte
-bak
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\config.txt
-34 Byte
-txt
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libcrypto-1_1.dll
-3.3 MB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libffi-7.dll
-32 KB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
-32.9 MB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\libssl-1_1.dll
-678.7 KB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\MSVCP140.dll
-613.3 KB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\pyexpat.pyd
-198.7 KB
-pyd
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\python39.dll
-4.3 MB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\register.reg
-11 KB
-reg
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\select.pyd
-28.2 KB
-pyd
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\unicodedata.pyd
-1.1 MB
-pyd
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\VCRUNTIME140.dll
-94.9 KB
-dll
-C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\dist\compress\winsound.pyd
-29.2 KB
 pyd
 [Licence_Begin]
 38628

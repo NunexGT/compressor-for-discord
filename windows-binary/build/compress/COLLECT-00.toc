@@ -14,9 +14,9 @@
    'C:\\Users\\Nuno '
    'Miguel\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python39\\site-packages\\numpy\\.libs\\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll',
    'BINARY'),
-  ('unicodedata',
+  ('_socket',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\unicodedata.pyd',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_socket.pyd',
    'EXTENSION'),
   ('select',
    'C:\\Program '
@@ -34,6 +34,18 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_queue.pyd',
    'EXTENSION'),
+  ('unicodedata',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_decimal',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_hashlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
   ('_multiprocessing',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_multiprocessing.pyd',
@@ -42,25 +54,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\pyexpat.pyd',
    'EXTENSION'),
-  ('_decimal',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_decimal.pyd',
-   'EXTENSION'),
   ('_asyncio',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_asyncio.pyd',
-   'EXTENSION'),
-  ('_hashlib',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_hashlib.pyd',
-   'EXTENSION'),
-  ('_uuid',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_uuid.pyd',
-   'EXTENSION'),
-  ('_socket',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_socket.pyd',
    'EXTENSION'),
   ('_lzma',
    'C:\\Program '
@@ -70,6 +66,10 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_bz2.pyd',
    'EXTENSION'),
+  ('_uuid',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_uuid.pyd',
+   'EXTENSION'),
   ('winsound',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\winsound.pyd',
@@ -78,13 +78,13 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\DLLs\\_ctypes.pyd',
    'EXTENSION'),
-  ('PIL._webp',
-   'C:\\Users\\Nuno '
-   'Miguel\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python39\\site-packages\\PIL\\_webp.cp39-win_amd64.pyd',
-   'EXTENSION'),
   ('PIL._imagingtk',
    'C:\\Users\\Nuno '
    'Miguel\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python39\\site-packages\\PIL\\_imagingtk.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL._webp',
+   'C:\\Users\\Nuno '
+   'Miguel\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python39\\site-packages\\PIL\\_webp.cp39-win_amd64.pyd',
    'EXTENSION'),
   ('PIL._imaging',
    'C:\\Users\\Nuno '
@@ -170,91 +170,91 @@
    'c:\\users\\nuno '
    'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\METADATA',
    'DATA'),
-  ('altgraph-0.17.2.dist-info\\top_level.txt',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\top_level.txt',
-   'DATA'),
-  ('setuptools-58.1.0.dist-info\\entry_points.txt',
+  ('setuptools-58.1.0.dist-info\\METADATA',
    'c:\\program '
-   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\entry_points.txt',
+   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\METADATA',
    'DATA'),
   ('pyinstaller-4.7.dist-info\\INSTALLER',
    'c:\\users\\nuno '
    'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\INSTALLER',
    'DATA'),
-  ('pyinstaller-4.7.dist-info\\RECORD',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\RECORD',
-   'DATA'),
-  ('setuptools-58.1.0.dist-info\\WHEEL',
-   'c:\\program '
-   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\WHEEL',
-   'DATA'),
-  ('altgraph-0.17.2.dist-info\\INSTALLER',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\INSTALLER',
-   'DATA'),
   ('pyinstaller-4.7.dist-info\\top_level.txt',
    'c:\\users\\nuno '
    'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\top_level.txt',
-   'DATA'),
-  ('pyinstaller-4.7.dist-info\\WHEEL',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\WHEEL',
-   'DATA'),
-  ('altgraph-0.17.2.dist-info\\METADATA',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\METADATA',
-   'DATA'),
-  ('setuptools-58.1.0.dist-info\\INSTALLER',
-   'c:\\program '
-   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\INSTALLER',
-   'DATA'),
-  ('setuptools-58.1.0.dist-info\\METADATA',
-   'c:\\program '
-   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\METADATA',
-   'DATA'),
-  ('altgraph-0.17.2.dist-info\\LICENSE',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\LICENSE',
-   'DATA'),
-  ('setuptools-58.1.0.dist-info\\LICENSE',
-   'c:\\program '
-   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\LICENSE',
-   'DATA'),
-  ('pyinstaller-4.7.dist-info\\COPYING.txt',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\COPYING.txt',
    'DATA'),
   ('setuptools-58.1.0.dist-info\\REQUESTED',
    'c:\\program '
    'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\REQUESTED',
    'DATA'),
-  ('altgraph-0.17.2.dist-info\\WHEEL',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\WHEEL',
-   'DATA'),
-  ('setuptools-58.1.0.dist-info\\RECORD',
-   'c:\\program '
-   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\RECORD',
-   'DATA'),
-  ('altgraph-0.17.2.dist-info\\RECORD',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\RECORD',
-   'DATA'),
-  ('pyinstaller-4.7.dist-info\\entry_points.txt',
-   'c:\\users\\nuno '
-   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\entry_points.txt',
-   'DATA'),
   ('altgraph-0.17.2.dist-info\\zip-safe',
    'c:\\users\\nuno '
    'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\zip-safe',
+   'DATA'),
+  ('altgraph-0.17.2.dist-info\\top_level.txt',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\top_level.txt',
+   'DATA'),
+  ('altgraph-0.17.2.dist-info\\INSTALLER',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\INSTALLER',
+   'DATA'),
+  ('pyinstaller-4.7.dist-info\\COPYING.txt',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\COPYING.txt',
+   'DATA'),
+  ('setuptools-58.1.0.dist-info\\WHEEL',
+   'c:\\program '
+   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\WHEEL',
    'DATA'),
   ('setuptools-58.1.0.dist-info\\top_level.txt',
    'c:\\program '
    'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\top_level.txt',
    'DATA'),
+  ('pyinstaller-4.7.dist-info\\RECORD',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools-58.1.0.dist-info\\entry_points.txt',
+   'c:\\program '
+   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\entry_points.txt',
+   'DATA'),
+  ('pyinstaller-4.7.dist-info\\entry_points.txt',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\entry_points.txt',
+   'DATA'),
+  ('altgraph-0.17.2.dist-info\\RECORD',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools-58.1.0.dist-info\\LICENSE',
+   'c:\\program '
+   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\LICENSE',
+   'DATA'),
+  ('setuptools-58.1.0.dist-info\\INSTALLER',
+   'c:\\program '
+   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('pyinstaller-4.7.dist-info\\WHEEL',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\WHEEL',
+   'DATA'),
+  ('setuptools-58.1.0.dist-info\\RECORD',
+   'c:\\program '
+   'files\\windowsapps\\pythonsoftwarefoundation.python.3.9_3.9.2544.0_x64__qbz5n2kfra8p0\\lib\\site-packages\\setuptools-58.1.0.dist-info\\RECORD',
+   'DATA'),
+  ('altgraph-0.17.2.dist-info\\METADATA',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\METADATA',
+   'DATA'),
   ('pyinstaller-4.7.dist-info\\REQUESTED',
    'c:\\users\\nuno '
    'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\pyinstaller-4.7.dist-info\\REQUESTED',
+   'DATA'),
+  ('altgraph-0.17.2.dist-info\\LICENSE',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\LICENSE',
+   'DATA'),
+  ('altgraph-0.17.2.dist-info\\WHEEL',
+   'c:\\users\\nuno '
+   'miguel\\appdata\\local\\packages\\pythonsoftwarefoundation.python.3.9_qbz5n2kfra8p0\\localcache\\local-packages\\python39\\site-packages\\altgraph-0.17.2.dist-info\\WHEEL',
    'DATA')],)

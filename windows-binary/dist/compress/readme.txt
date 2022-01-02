@@ -1,0 +1,1 @@
+Don´t forget to correctly install ffmpeg!
