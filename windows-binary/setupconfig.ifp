@@ -55,7 +55,7 @@ Time = 2
 PlaySound = 0
 Allow = 0
 [Build]
-File = compressor4discord
+File = C:\Users\Nuno Miguel\Documents\GitHub\compressor-for-discord\windows-binary\compressor4discord-win64.exe
 SetupIconPath = ..\icons\ancient.ico
 UninstallIconPath = ..\icons\ancient.ico
 CompressionMethod = 2
