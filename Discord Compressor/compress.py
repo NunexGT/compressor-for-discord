@@ -71,20 +71,25 @@ MessageBox = ctypes.windll.user32.MessageBoxW
 
 if (discord_nitro_preset == 'nitro_preset = false'): 
     video_compression_target=8000
+    #for some reason, when splitting videos, using str(video_compression_target) brakes it
+    video_compression_target_instring="8000"
 else:
     video_compression_target=100000
-
+    video_compression_target_instring="100000"
 
 def mbox(message):
     return ctypes.windll.user32.MessageBoxW(0,message, 'Compress for Discord', MB_YESNO | ICON_EXLAIM)
 
-def divide_video(video_bitrate, worst_bitrate_video, duration):
-    bitrate_difference_ratio = worst_bitrate_video / video_bitrate
-    video_parts_amount = round(bitrate_difference_ratio ** 0.5) + 1
+def divide_video(video_bitrate, worst_bitrate_video, duration, target_total_bitrate):
+    #bitrate_difference_ratio = worst_bitrate_video / video_bitrate
+    #video_parts_amount = round(bitrate_difference_ratio ** 0.5) + 1
+    print(target_total_bitrate)
+    total_pieces_bitrate=128000+496000
+    video_parts_amount=round(total_pieces_bitrate/target_total_bitrate)
     print("The video will be devided in:" + str(video_parts_amount) + "parts")
     duration_rounding=round(duration)
     duration_rounded=duration_rounding + 1 
-    videos_time_seconds = duration / video_parts_amount
+    videos_time_seconds = duration_rounded / video_parts_amount
     split_by_seconds(file_path,videos_time_seconds)
     return video_parts_amount
     
@@ -103,8 +108,9 @@ def ceildiv(a, b):
     return int(math.ceil(a / float(b)))
 
 
-def split_by_seconds(filename, split_length, vcodec="libx264", acodec="aac",
-                     extra="-b:v 256k", video_length=None, **kwargs):
+def split_by_seconds(filename, split_length, vcodec="libx264", acodec="mp3",
+                     extra="-b:v 456k",format=".mp4",audio_chanels="2",audio_bitrate="128k",resolution="scale=-2:576", video_length=None, **kwargs):
+
     if split_length and split_length <= 0:
         print("Split length can't be 0")
         raise SystemExit
@@ -116,10 +122,12 @@ def split_by_seconds(filename, split_length, vcodec="libx264", acodec="aac",
         print("Video length is less then the target split length.")
         raise SystemExit
 
-    split_cmd = ["ffmpeg", "-i", filename, "-vcodec", vcodec, "-acodec", acodec] + shlex.split(extra)
+    #-fs ffmpeg commands just throws and error, can´t use it for limiting the file size of each video part
+    split_cmd = ["ffmpeg", "-i", filename, "-vcodec", vcodec, "-acodec", acodec, "-format", format , "-ac", audio_chanels, "-b:a", audio_bitrate, "-vf", resolution] + shlex.split(extra)
+    #split_cmd = ["ffmpeg", "-i", filename, "-vcodec", vcodec, "-acodec", acodec, "-format", format , "-ac", audio_chanels, "-b:a", audio_bitrate, "-fs", video_compression_target_instring] + shlex.split(extra)
     try:
         filebase = ".".join(filename.split(".")[:-1])
-        fileext = filename.split(".")[-1]
+        fileext = ".mp4"
     except IndexError as e:
         raise IndexError("No . in filename. Error: " + str(e))
     for n in range(0, split_count):
@@ -132,13 +140,8 @@ def split_by_seconds(filename, split_length, vcodec="libx264", acodec="aac",
         split_args += ["-ss", str(split_start), "-t", str(split_length),
                        filebase + "-" + str(n + 1) + "-of-" +
                        str(split_count) + "." + fileext]
-        print("About to run: " + " ".join(split_cmd + split_args))
+        print("About to run (ffmpeg command): " + " ".join(split_cmd + split_args))
         subprocess.check_output(split_cmd + split_args)
-
-
-def compress_video_parts(video_parts_amount):
-    for i in range(video_parts_amount):
-        compress_video(filename + "-" + i +"-of-2"+extension,video_compression_target)
 
 
 def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_suffix='-compressed'):
@@ -204,7 +207,7 @@ def compress_video(video_full_path, size_upper_bound, two_pass=True, filename_su
             print(winmessagebox)
             time.sleep(2)
             if winmessagebox == 6:
-                divide_video(video_bitrate,worst_bitrate_video,duration)
+                divide_video(video_bitrate,worst_bitrate_video,duration,target_total_bitrate)
             if winmessagebox == 7:
                 winmessagebox=mbox('''This Video is really large to fit in 8MB
 Do you want to try the 100MB Discord Nitro Limit?''')
@@ -217,7 +220,7 @@ Do you want to try the 100MB Discord Nitro Limit?''')
             print('Bitrate {} bps is extremely low! Stop compress.'.format(video_bitrate))
             winmessagebox=mbox('''Do You want to split this video into various parts?''')
             if winmessagebox == 6:
-                divide_video(video_bitrate,worst_bitrate_video,duration)
+                divide_video(video_bitrate,worst_bitrate_video,duration,target_total_bitrate)
             if winmessagebox == 7:
                 winmessagebox=mbox('''This video will not fit into Discord without making the video unwatchable
 Do You Want to use nomral optimization to make it smaller?''')
@@ -259,6 +262,7 @@ def optimized_video():
         #end Video COmpression
 
         #start image compression
+
 
 
 def image_compression(im):
@@ -611,7 +615,7 @@ def execute_video():
 
 #start compression
 
-video_file_extensions = ['.mp4','.avi','.mkv','.mov','.wmv','.avi','.mpeg','.mpg','.m2v','.mp2','.mpe','.mpv','.webm','.flv','.vob','.ogg','drc','qt','.amv','.m4v','.3gp']
+video_file_extensions = ['.mp4','.avi','.mov','.wmv','.avi','.mpeg','.mpg','.m2v','.mp2','.mpe','.mpv','.webm','.flv','.vob','.ogg','drc','qt','.amv','.m4v','.3gp']
 audio_file_extensions = ['.mp3','.wav','.aac','.ogg','.flac','.alac','.aiff','.opus','.wma']
 photo_file_extension = ['.jpg','.jpeg','.png','.tiff','.bmp']
 
@@ -632,4 +636,11 @@ if extension in photo_file_extension:
 if (extension == '.gif'):
     execute_gif()
     finished_sound()
+
+if (extension == '.mkv'):
+    optimized_video()
+    compress_video(filename+".mp4", video_compression_target)
+    os.remove(filename+".mp4")
+    finished_sound()
+
 
